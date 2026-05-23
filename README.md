@@ -2,9 +2,7 @@
 
 AI-powered nutrition analysis from meal photos. Food Vision detects food items with **YOLOv8**, estimates portion size, calculates calories and macros from a built-in nutrition database, and provides personalized dietary recommendations based on your profile and goals.
 
-**Group 34** — academic prototype (see `IEEE_Report_FoodVision.md` for the full paper-style write-up).
-
-For detailed architecture, data flow, and training notes, see [PROJECT_ARCHITECTURE.md](PROJECT_ARCHITECTURE.md).
+**Group 34** — academic prototype for AI-powered meal analysis.
 
 ---
 
@@ -26,10 +24,7 @@ foodvision/
 ├── foodvision_app.py         # Streamlit web interface
 ├── run_interface.py          # Launcher for the Streamlit app
 ├── train_food_detection_model.ipynb   # Fine-tune YOLOv8 on Roboflow dataset
-├── requirements.txt
-├── PROJECT_ARCHITECTURE.md   # In-depth architecture & training flow
-├── IEEE_Report_FoodVision.md # Academic report (Markdown)
-└── IEEE_Report_FoodVision.tex
+└── requirements.txt
 ```
 
 Model weights (e.g. `best (1).pt`) are not committed to the repo — place your trained `.pt` file in the project root after training.
@@ -150,15 +145,6 @@ Detected class names must match these keys for full nutrition data. Custom YOLO 
 - Nutrition values are **static lookups**, not a live USDA/API.
 - Recommendations are **rule-based**, not medical advice.
 - Best results require a **food-specific** trained model; the default `yolov8n.pt` is not tuned for this task.
-
----
-
-## Documentation
-
-| Document | Description |
-|----------|-------------|
-| [PROJECT_ARCHITECTURE.md](PROJECT_ARCHITECTURE.md) | Modules, data flow, training & inference pipelines |
-| [IEEE_Report_FoodVision.md](IEEE_Report_FoodVision.md) | Formal project report |
 
 ---
 
